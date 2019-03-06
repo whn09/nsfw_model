@@ -13,7 +13,7 @@ for i in range(len(filenames)):
 fout = open('../dataset/video2/haha_video_keras_nsfw_score.csv', 'w')
 fout.write('content_id,nsfw_score\n')
 batch_size = 1024
-for i in range(len(filenames)/batch_size+1):
+for i in range(int(len(filenames)/batch_size+1)):
     print(i*batch_size, '/', len(filenames))
     result = detector.predict(filenames[i*batch_size:(i+1)*batch_size], batch_size=batch_size)
     for k, v in result.items():
