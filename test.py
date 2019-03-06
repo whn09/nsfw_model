@@ -16,5 +16,5 @@ for i,filename in enumerate(filenames):
         result = detector.predict(base_dir+filename)
         for k, v in result.items():  # only one element
             nsfw_score = v['sexy']+v['porn']+v['hentai']
-            fout.write(filename[:-4]+str(nsfw_score)+'\n')
+            fout.write(filename[:-4]+','+str(nsfw_score)+'\n')
 fout.close()
