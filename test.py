@@ -13,8 +13,8 @@ fout.write('content_id,nsfw_score\n')
 for i,filename in enumerate(filenames):
     if i % 1000 == 0:
         print(i, '/', len(filenames))
-        result = detector.predict(base_dir+filename)
-        for k, v in result.items():  # only one element
-            nsfw_score = v['sexy']+v['porn']+v['hentai']
-            fout.write(filename[:-4]+','+str(nsfw_score)+'\n')
+    result = detector.predict(base_dir+filename)
+    for k, v in result.items():  # only one element
+        nsfw_score = v['sexy']+v['porn']+v['hentai']
+        fout.write(filename[:-4]+','+str(nsfw_score)+'\n')
 fout.close()
