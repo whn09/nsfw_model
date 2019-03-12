@@ -21,6 +21,7 @@ try:
         content_id = params[1]
         exist_content_ids[content_id] = 1
     fin.close()
+    print('exist_content_ids:', len(exist_content_ids))
     new_filenames = []
     for i in range(len(filenames)):
         content_id = filenames[i].replace(base_dir, '')[:-4]
