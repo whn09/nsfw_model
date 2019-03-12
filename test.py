@@ -31,11 +31,10 @@ try:
     print('new_filenames:', len(filenames))
 except Exception as e:
     print(e)
+    exit(-1)
     pass
 
-exit(-1)
-
-fout = open('../dataset/video2/haha_video_keras_nsfw_score.csv', 'w')
+fout = open('../dataset/video2/haha_video_keras_nsfw_score2.csv', 'w')
 fout.write('content_id,nsfw_score\n')
 batch_size = 64
 for i in range(int(len(filenames)/batch_size+1)):
