@@ -21,10 +21,11 @@ try:
         content_id = params[1]
         exist_content_ids[content_id] = 1
     fin.close()
-    print('exist_content_ids:', len(exist_content_ids))
+    print('exist_content_ids:', len(exist_content_ids), list(exist_content_ids.keys())[0])
     new_filenames = []
     for i in range(len(filenames)):
         content_id = filenames[i].replace(base_dir, '')[:-4]
+        print('content_id:', content_id)
         if content_id not in exist_content_ids:
             new_filenames.append(filenames[i])
     filenames = new_filenames
