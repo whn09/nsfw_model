@@ -28,7 +28,8 @@ try:
             new_filenames.append(filenames[i])
     filenames = new_filenames
     print('new_filenames:', len(filenames))
-except:
+except Exception as e:
+    print(e)
     pass
 
 exit(-1)
