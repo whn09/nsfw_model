@@ -18,14 +18,13 @@ try:
     exist_content_ids = dict()
     for line in lines:
         params = line.split(',')
-        content_id = params[1]
+        content_id = params[0]
         exist_content_ids[content_id] = 1
     fin.close()
-    print('exist_content_ids:', len(exist_content_ids), list(exist_content_ids.keys())[0])
+    print('exist_content_ids:', len(exist_content_ids))
     new_filenames = []
     for i in range(len(filenames)):
         content_id = filenames[i].replace(base_dir, '')[:-4]
-        print('content_id:', content_id)
         if content_id not in exist_content_ids:
             new_filenames.append(filenames[i])
     filenames = new_filenames
