@@ -24,7 +24,7 @@ try:
     new_filenames = []
     for i in range(len(filenames)):
         content_id = filenames[i].replace(base_dir, '')[:-4]
-        if not exist_content_ids.has_key(content_id):
+        if content_id not in exist_content_ids:
             new_filenames.append(filenames[i])
     filenames = new_filenames
     print('new_filenames:', len(filenames))
